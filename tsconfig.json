@@ -1,0 +1,25 @@
+{
+  "extends": "fastify-tsconfig",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    // "resolveJsonModule": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/utils/encryption-decryption.js",
+    "fastify.custom.d.ts"
+  ],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}
