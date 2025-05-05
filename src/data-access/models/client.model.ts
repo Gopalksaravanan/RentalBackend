@@ -9,17 +9,8 @@ const clientSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     phone: { type: String, required: true },
     role: { type: String, enum:["ADMIN","STAFF"],required: true },
-    branches:[{
-        branchId: { type: String, required: true },
-        branchName: { type: String, required: true },
-        branchAddress: { type: String, required: true },  
-        branchPhone: { type: String, required: true },
-        branchEmail: { type: String, required: true },
-        branchGst: { type: String, required: true },
-        branchContactPerson: { type: String, required: true }
-    }],
     createdAt: { type: Date, default: () => new Date()},
     updatedAt: { type: Date, default: () => new Date()}
 })
 
-export const clientModel = mongoose.model<Client>("admins", clientSchema)
+export const clientModel = mongoose.model<Client>("client", clientSchema)

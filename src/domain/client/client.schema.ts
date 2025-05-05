@@ -6,17 +6,6 @@ export const clientSchema = Type.Object({
   email: Type.String(),
   phone: Type.String(),
   role: Type.String(),
-  branches: Type.Array(
-    Type.Object({
-      branchId: Type.String(),
-      branchName: Type.String(),
-      branchAddress: Type.String(),
-      branchPhone: Type.String(),
-      branchEmail: Type.String(),
-      branchGst: Type.String(),
-      branchContactPerson: Type.String(),
-    })
-  ),
   createdAt: Type.String(),
   updatedAt: Type.String(),
 });
