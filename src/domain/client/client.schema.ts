@@ -11,3 +11,6 @@ export const clientSchema = Type.Object({
 });
 
 export type Client = Static<typeof clientSchema>;
+
+
+export const createClientRequestDTO = Type.Omit(clientSchema, ["clientId", "createdAt", "updatedAt"]);

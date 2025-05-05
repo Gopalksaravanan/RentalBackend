@@ -15,7 +15,7 @@ export type AppOptions = {
   // Place your custom options for app below here.
 } & Partial<AutoloadPluginOptions>;
 
-export const ROUTE_PREFIX = '/ybott-core-svc/api/v1/';
+export const ROUTE_PREFIX = '/rental-core-svc/api/v1/';
 // Pass --options via CLI arguments in command to enable these options.
 const options: AppOptions = {};
 export const projectSourceDir = __dirname;
