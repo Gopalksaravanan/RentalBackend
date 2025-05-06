@@ -14,3 +14,7 @@ export type Client = Static<typeof clientSchema>;
 
 
 export const createClientRequestDTO = Type.Omit(clientSchema, ["clientId", "createdAt", "updatedAt"]);
+
+export const readClientRequestParamSchema = Type.Object({
+  clientId: Type.String(),
+})
