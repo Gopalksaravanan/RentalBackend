@@ -22,3 +22,13 @@ export const productSchema = Type.Object({
 });
 
 export type Product = Static<typeof productSchema>;
+
+
+export const createProudctRequestDTO = Type.Omit(productSchema, [
+  "productId",
+  "createdAt",
+  "updatedAt",]);
+
+export const readProductRequestParamSchema = Type.Object({
+  productId: Type.String(),
+});

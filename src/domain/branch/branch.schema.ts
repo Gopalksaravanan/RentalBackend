@@ -18,3 +18,7 @@ export type Branch = Static<typeof branchSchema>;
 export const createBranchRequestDTO = Type.Omit(branchSchema, [
   "branchId","createdAt", "updatedAt"]);
   
+export const readBranchRequestParamSchema = Type.Object({
+    branchId: Type.String(),
+  })
+  

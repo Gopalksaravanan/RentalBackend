@@ -1,19 +1,20 @@
-import { getAllClients } from "@/data-access/client.repo";
+import { getOneBranch } from "@/data-access/branch.repo";
+import { readBranchRequestParamSchema } from "../../branch.schema";
 
-const getClientUseCase = async () => {
-     try{
-        const getAllClient = await getAllClients();
+const getOneBranchUseCase = async (branchId: typeof readBranchRequestParamSchema) => {
+    try{
+        const branch = await getOneBranch(branchId);
         return {
             timestamp: new Date().toISOString(),
             statusCode: 200,
-            message: "Clients fetched successfully",
+            message: "Branch fetched successfully",
             status:"OK",
             success: true,
             data :{
-                clients: getAllClient
+                branch: branch
             }
-        };
-     } catch (error){
+        }
+    } catch (error){
         return{
             timestamp: new Date().toISOString(),
             statusCode: 500,
@@ -21,7 +22,7 @@ const getClientUseCase = async () => {
             message : error instanceof Error ? error.message : "Unknown error",
             success: false,
         }
-     }
+    }
 }
 
-export default getClientUseCase
+export default getOneBranchUseCase;
